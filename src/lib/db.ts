@@ -1,7 +1,5 @@
 import pg from 'pg';
 import { Team, Game } from '../types.js';
-import { environment } from './environment.js';
-import { logger } from './logger.js';
 import {
   teamMapper,
   teamsMapper,
@@ -9,14 +7,16 @@ import {
   gamesMapper,
 } from './mappers.js';
 
-const env = environment(process.env, logger);
+//const env = environment(process.env, logger);
 
+/*
 if (!env?.connectionString) {
   process.exit(-1);
 }
 
 const { connectionString } = env;
 
+*/
 
 let savedPool: pg.Pool | undefined;
 
