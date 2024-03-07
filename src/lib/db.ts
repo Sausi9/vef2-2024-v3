@@ -186,22 +186,22 @@ export async function getGameById(gameId: number): Promise<Game | null> {
 
   const result = await query(sql, [gameId]);
   if (!result || result.rows.length === 0) {
-    return null; // No game found with the given ID
+    return null; 
   }
 
   const gameRow = result.rows[0];
   
-  // Construct the Game object
+  
   const game: Game = {
     date: new Date(gameRow.date),
     homeTeam: {
-      id: gameRow.home_team_id, // Add the 'id' property
+      id: gameRow.home_team_id, 
       name: gameRow.home_team_name,
       slug: gameRow.home_team_slug,
       description: gameRow.home_team_description,
     },
     awayTeam: {
-      id: gameRow.away_team_id, // Add the 'id' property
+      id: gameRow.away_team_id, 
       name: gameRow.away_team_name,
       slug: gameRow.away_team_slug,
       description: gameRow.away_team_description,

@@ -12,7 +12,6 @@ export function validationCheck(
   const validation = validationResult(req);
   if (!validation.isEmpty()) {
     const errors = validation.array();
-    // Simplify error handling: directly return a 400 status with all validation errors.
     return res.status(400).json({ errors });
   }
 
